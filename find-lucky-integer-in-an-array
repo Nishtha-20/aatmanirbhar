@@ -1,0 +1,30 @@
+class Solution {
+    public int findLucky(int[] arr) {
+        int l=arr.length;
+        int z[]=new int[l];
+        int m=0;
+        Arrays.sort(arr);
+        for(int n=0;n<l-1;n++)
+        {
+            if(arr[n]!=arr[n+1])
+                z[m++]=arr[n];
+        }
+        z[m++]=arr[l-1];
+        int x[]=new int[m];
+        int y[]=new int[m];
+        int c=0;
+        int d=0;
+        for(int i=m-1;i>=0;i--)
+        {
+            int f=0;
+            for(int j=0;j<l;j++)
+            {
+                if(z[i]==arr[j])
+                    f++;
+            }
+            if(z[i]==f)
+                return f;
+        }
+        return -1;
+    }
+}
