@@ -1,0 +1,14 @@
+class Solution {
+    public int[][] flipAndInvertImage(int[][] A) {
+        int f = A[0].length;
+        for (int[] rows: A)
+            for (int a = 0; a < (f + 1) / 2; a++) 
+            {
+                int temp = rows[a] ^ 1;
+                rows[a] = rows[f - 1 - a] ^ 1;
+                rows[f - 1 - a] = temp;
+            }
+
+        return A;
+    }
+}
