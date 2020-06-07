@@ -1,0 +1,58 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+class GFG {
+	public static void main (String[] args) {
+	//code
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int p=0;
+	while(p<a)
+	{
+	    int b=sc.nextInt();
+	    int x[]=new int[b];
+	    for(int i=0;i<b;i++)
+	    {
+	        x[i]=sc.nextInt();
+	    }
+	    int r=0;
+	    List<Integer> list = new ArrayList<>();
+	    int n=0;
+	    int d=0;
+	    for(int j=0;j<b;j++)
+	    {
+	        n=x[j];
+	        while(n>0)
+	        {
+	            d=n%10;
+	            list.add(d);
+	            n/=10;
+	        }
+	    }
+	    
+	    int c=list.size();
+        Integer[] y = new Integer[list.size()]; 
+        y = list.toArray(y); 
+	    Arrays.sort(y);
+	    //int c1=y.length;
+	    
+	    for (int z=0; z<c-1; z++) 
+	    { 
+	        if(y[z]!=y[z+1])
+	        {
+	            System.out.print(y[z]);
+	            System.out.print(" ");
+	        }
+        } 
+        //if(y[c1-2]!=y[c1-1])
+        System.out.print(y[c-1]);
+	    System.out.print("\n");
+	    p++;
+	}
+	}
+}
